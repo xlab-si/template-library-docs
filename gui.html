@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Library GUI &mdash; Template Library  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/xlab-favicon-16x16.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Template Library REST API" href="api.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Template Library
+            <img src="_static/xopera-tps-mark-black-mid.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Template Library GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Template Library REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Template Library CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugin.html">Template Library plugin for VS Code/Eclipse Che</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Template Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Template Library GUI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="template-library-gui">
+<span id="gui"></span><h1>Template Library GUI<a class="headerlink" href="#template-library-gui" title="Permalink to this headline"></a></h1>
+<p>This part explains the Template Library Graphical User Interface (GUI), which is accessible at
+<a class="reference external" href="https://template-library-xopera.xlab.si/">template-library-xopera.xlab.si/</a>.</p>
+<div class="section" id="usage">
+<span id="gui-usage"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>TPS web interface is used for displaying and searching for IaC TOSCA modules and service templates published in the TPS.
+This provides an alternative way to browse through the TPS content in addition to the other options as REST API
+endpoint calls, REST API Swagger UI, CLI, Eclipse Che plugin.
+This addition enables an easier way to search for and view templates in a browser on the go.</p>
+<p>It displays publicly available templates’ data to users without authentication.
+User authorization is integrated with RADON IAM with Keycloak and is needed for accessing the private TPS content.
+No additional authorization is added for using TPS GUI.
+User can login with Keycloak by clicking <em>Log in</em> link in navigation.</p>
+<p>All users can search public templates by keyword, preview the template’s last version’s readme file and download
+compressed version files, while authenticated users can also view their private templates.</p>
+<div class="figure align-center" id="id1">
+<span id="gui-search"></span><a class="reference external image-reference" href="_images/search.png"><img alt="_images/search.png" src="_images/search.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Searching templates by keyword.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>A click on template info opens additional view with last version name, date and download link for version files.
+If the template has a README file it is displayed.</p>
+<div class="figure align-center" id="id2">
+<span id="gui-template-version"></span><a class="reference external image-reference" href="_images/template_details.png"><img alt="_images/template_details.png" src="_images/template_details.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Display of template version’s information and files.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>In sidebar users can choose to view templates in template groups or ordered by template type.</p>
+<div class="figure align-center" id="id3">
+<span id="gui-template-groups"></span><a class="reference external image-reference" href="_images/template_groups.png"><img alt="_images/template_groups.png" src="_images/template_groups.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">List templates in template groups.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="Template Library REST API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xOpera team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

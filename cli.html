@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Library CLI &mdash; Template Library  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/xlab-favicon-16x16.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Template Library plugin for VS Code/Eclipse Che" href="plugin.html" />
+    <link rel="prev" title="Template Library REST API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Template Library
+            <img src="_static/xopera-tps-mark-black-mid.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">Template Library GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Template Library REST API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Template Library CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auth-login-and-logout">Auth (login and logout)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#templates">Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-model-and-create-blueprint">Create model and create blueprint</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#save-template">Save template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-template">Get template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-and-filter-templates">List and filter templates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#versions">Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#template-groups">Template groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-groups">User groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-story">User story</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tps-cli-video">TPS CLI video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cli-commands">CLI commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-command">setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#login">login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logout">logout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user">user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-group">user-group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template">template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-group">template-group</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin.html">Template Library plugin for VS Code/Eclipse Che</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Template Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Template Library CLI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cli.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="template-library-cli">
+<span id="cli"></span><h1>Template Library CLI<a class="headerlink" href="#template-library-cli" title="Permalink to this headline"></a></h1>
+<p>This section explains the installation and the usage of the Template Library Command Line Interface (CLI).</p>
+<div class="section" id="prerequisites">
+<span id="cli-prerequisites"></span><h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
+<p>Template Library CLI requires python 3 (and a virtual environment).
+In a typical modern Linux environment, we should already be set.
+In Ubuntu, however, we might need to run the following commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt update
+<span class="gp">$ </span>sudo apt install -y python3-venv python3-wheel python-wheel-common
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<span id="cli-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<p>The only thing that needs to be installed if you wish to use Template Library from the command line is the Template
+library CLI.
+The CLI tool goes by the name <a class="reference external" href="https://pypi.org/project/xopera-template-library">xopera-template-library</a> and you can install it as a Python package from <a class="reference external" href="https://pypi.org/project/xopera-template-library">PyPI</a> with
+the command below (The simplest way to test the package is to install it into a virtual environment):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m venv .venv <span class="o">&amp;&amp;</span> . .venv/bin/activate
+<span class="gp">$ </span>pip install xopera-template-library
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://pypi.org/project/xopera-template-library">xopera-template-library</a> is a Python pip package so it is published on Python Package Index (<a class="reference external" href="https://pypi.org/project/xopera-template-library">PyPI</a>) where you
+can find more information about this package versions and updates.
+There is also a development releases available at <a class="reference external" href="https://test.pypi.org/project/xopera-template-library">Test PyPI</a> instance that are released some time before
+production release.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<span id="cli-usage"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>Template Library CLI is a client tool for managing templates, blueprints and their versions.
+It is here to save you from executing complex curl requests and will offer you to easily access and operate with the
+Template Library.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template -h
+<span class="go">usage: xopera-template-library [-h] [-v]</span>
+<span class="go">                               {template,template-group,user-group,user,setup,login,logout}</span>
+<span class="go">                               ...</span>
+
+<span class="go">positional arguments:</span>
+<span class="go">  {template,template-group,user-group,user,setup,login,logout}</span>
+<span class="go">    template            Template actions.</span>
+<span class="go">    template-group      Actions for groups of templates.</span>
+<span class="go">    user-group          Actions for groups of users.</span>
+<span class="go">    user                User info.</span>
+<span class="go">    setup               Setup client variables.</span>
+<span class="go">    login               Login to your account.</span>
+<span class="go">    logout              Logout of your account.</span>
+
+<span class="go">optional arguments:</span>
+<span class="go">  -h, --help            show this help message and exit</span>
+<span class="go">  -v, --verbose         Increase output verbosity</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>At any point the <code class="docutils literal notranslate"><span class="pre">-h/--help</span></code> flag is available to display proceeding options.
+There is also <code class="docutils literal notranslate"><span class="pre">-v/--verbose</span></code> flag that will turn on the debug mode to see more output.</p>
+</div>
+<p>The next sections will walk you through all Template Library CLI commands and their functions.</p>
+<div class="section" id="setup">
+<span id="cli-setup"></span><h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">setup</span></code> command allows users to configure the API endpoint and is the first step of Template Library CLI use.</p>
+<p>Before you begin using <code class="docutils literal notranslate"><span class="pre">xopera-template-library</span></code> tool you have to make sure that Template Library REST API endpoint
+and Keycloak auth endpoint are properly configured.
+This can be done with <code class="docutils literal notranslate"><span class="pre">setup</span></code> command where you will be able to change the default values that are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># default REST API endpoint</span>
+<span class="n">REST_API_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://template-library-xopera.xlab.si/api&quot;</span>
+<span class="c1"># default Keycloak endpoint</span>
+<span class="n">KEYCLOAK_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://openid-xopera.xlab.si&quot;</span>
+</pre></div>
+</div>
+<p>Here’s the example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library setup --keycloak
+<span class="go">Current Template Library REST API endpoint: https://template-library-xopera.xlab.si/api</span>
+<span class="go">Modify API endpoint (press enter to keep the current):</span>
+<span class="go">Template Library REST API endpoint has been set to: https://template-library-xopera.xlab.si/api.</span>
+
+<span class="go">Current Keycloak auth endpoint: https://openid-xopera.xlab.si</span>
+<span class="go">Modify Keycloak endpoint (press enter to keep the current):</span>
+<span class="go">Keycloak endpoint has been set to: https://openid-xopera.xlab.si.</span>
+</pre></div>
+</div>
+<p>If you run only <code class="docutils literal notranslate"><span class="pre">xopera-template-library</span> <span class="pre">setup</span></code> you will be able to modify only the REST API endpoint.
+You have to use <code class="docutils literal notranslate"><span class="pre">--keycloak</span></code> flag to tell the CLI that you will modify Keycloak auth endpoint too.</p>
+</div>
+<div class="section" id="auth-login-and-logout">
+<span id="cli-auth"></span><h3>Auth (login and logout)<a class="headerlink" href="#auth-login-and-logout" title="Permalink to this headline"></a></h3>
+<p>To use the CLI you will need an account for Template Library.</p>
+<p>Before invoking any Template Library actions you need to login with your account, which can be created in using Template
+library API (<a class="reference internal" href="api.html#api"><span class="std std-ref">Template Library REST API</span></a>) using the special http basic auth credentials.
+Another way of having an account is using the XLAB Keycloak instance (accessible at <a class="reference external" href="https://openid-xopera.xlab.si">openid-xopera.xlab.si</a>).</p>
+<p>So, with Template Library CLI you can login as:</p>
+<ul class="simple">
+<li><p>XLAB Keycloak user (default)</p></li>
+<li><p>other Keycloak user from Keycloak identity providers such as RADON
+(use <cite>–identity-provider IDENTITY_PROVIDER_ID</cite> flag)</p></li>
+</ul>
+<p>Here’s the example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>login as XLAB Keycloak user, with prompts
+<span class="gp">$ </span>xopera-template-library login
+<span class="go">Username: username1</span>
+<span class="go">Password: *******</span>
+<span class="go">User &#39;username1&#39; logged in.</span>
+
+<span class="gp"># </span>login as XLAB Keycloak user, prompt <span class="k">for</span> password
+<span class="gp">$ </span>xopera-template-library login --username <span class="s2">&quot;username1&quot;</span>
+<span class="go">Password: *******</span>
+<span class="go">User &#39;username1&#39; logged in.</span>
+
+<span class="gp"># </span>login as XLAB Keycloak user, skip prompts
+<span class="gp">$ </span>xopera-template-library login --username <span class="s2">&quot;username1&quot;</span> --password <span class="s2">&quot;password1&quot;</span>
+<span class="go">User &#39;username1&#39; logged in.</span>
+
+<span class="gp"># </span>login as Keycloak user from one of Keycloak identity providers <span class="o">(</span>RADON Azure<span class="o">)</span>
+<span class="gp"># </span>use this when you know the ID of your identity provider <span class="o">(</span>--identity-provider IDENTITY_PROVIDER_ID<span class="o">)</span>
+<span class="gp">$ </span>xopera-template-library login --identity-provider zocial-keycloak-xlab-oidc-provider-to-keycloak-radon-azure
+<span class="go">Using Keycloak identity provider zocial-keycloak-xlab-oidc-provider-to-keycloak-radon-azure (Log in with RADON credentials (Azure)).</span>
+<span class="go">Username: username1</span>
+<span class="go">Password: *******</span>
+<span class="go">User &#39;username1&#39; logged in.</span>
+
+<span class="gp"># </span>login as Keycloak user from one of Keycloak identity providers <span class="o">(</span>RADON ENG<span class="o">)</span>
+<span class="gp"># </span><span class="k">if</span> you <span class="k">do</span> not know the ID of the provider you can leave out the ID and the
+<span class="gp"># </span>available providers will be listed and you will be able to choose one <span class="k">for</span> authentication.
+<span class="gp">$ </span>xopera-template-library login --identity-provider
+<span class="go">Keycloak identity provider was not specified or is not available. You can pick your identity provider in the next steps.</span>
+<span class="go">Do you want to continue? (Y/n):</span>
+<span class="go">+List of available Keycloak identity providers--------------------------------------+---------------------------------------------+</span>
+<span class="go">| Provider number | Provider id                                                     | Provider description                        |</span>
+<span class="go">+-----------------+-----------------------------------------------------------------+---------------------------------------------+</span>
+<span class="go">| 1               | social-keycloak-xlab-oidc-provider-to-keycloak-radon            | Log in with RADON credentials (ENG)         |</span>
+<span class="go">| 2               | social-keycloak-xlab-oidc-provider-to-keycloak-radon-azure      | Log in with RADON credentials (Azure)       |</span>
+<span class="go">+-----------------+-----------------------------------------------------------------+---------------------------------------------+</span>
+<span class="go">Type in the valid provider number from the table above: 1</span>
+<span class="go">Using Keycloak identity provider social-keycloak-xlab-oidc-provider-to-keycloak-radon (Log in with RADON credentials (ENG)).</span>
+<span class="go">Username: username2</span>
+<span class="go">Password: *******</span>
+<span class="go">User &#39;username2&#39; logged in.</span>
+</pre></div>
+</div>
+<p>The following arguments are required but you will be prompted by an input if missing: <code class="docutils literal notranslate"><span class="pre">--username</span></code>, <code class="docutils literal notranslate"><span class="pre">--password</span></code>.</p>
+<p>Logging out removes all user data.</p>
+<p>Here’s the example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library <span class="nb">logout</span>
+<span class="go">User &#39;username1&#39; logged out.</span>
+</pre></div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Be careful not to expose your Keycloak username and password. Rather type in your password in prompt without
+using the <code class="docutils literal notranslate"><span class="pre">--password</span></code> flag.</p>
+</div>
+</div>
+<div class="section" id="templates">
+<span id="cli-templates"></span><h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline"></a></h3>
+<p>Templates can be uploaded with <code class="docutils literal notranslate"><span class="pre">save</span></code> and downloaded with <code class="docutils literal notranslate"><span class="pre">get</span></code> command.
+User can also list public and private templates according to name and view version information.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template
+<span class="go">positional arguments:</span>
+<span class="go">  {create,save,get,list,version,list-groups}</span>
+<span class="go">    create              Initialize a template directory and files.</span>
+<span class="go">    save                Save a template to database.</span>
+<span class="go">    get                 Get a template from database.</span>
+<span class="go">    list                List templates from database.</span>
+<span class="go">    version             List versions of a template from database.</span>
+<span class="go">    list-groups         List template groups the template is in.</span>
+
+<span class="go">optional arguments:</span>
+<span class="go">  -h, --help            show this help message and exit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-model-and-create-blueprint">
+<span id="id1"></span><h3>Create model and create blueprint<a class="headerlink" href="#create-model-and-create-blueprint" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">template</span> <span class="pre">create</span></code> command generates all directories and files that are needed to upload a Template Library model.
+After generating a model (TOSCA template) or a blueprint (<a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a>) user can add in his own code.
+You will be asked for your template’s name and type.
+Possible types are <cite>data</cite>, <cite>artifact</cite>, <cite>capability</cite>, <cite>requirement</cite>, <cite>relationship</cite>, <cite>interface</cite>, <cite>node</cite>, <cite>group</cite>,
+<cite>policy</cite>, <cite>csar</cite> and <cite>other</cite>.</p>
+<p>So, when using the <code class="docutils literal notranslate"><span class="pre">xopera-template-library</span> <span class="pre">template</span> <span class="pre">create</span></code> CLI command this will automatically create the structure
+for your model (model will be created in current directory in a folder that has the same name as your model).
+If your model is just a basic TOSCA entity (e.g. node, relationship, etc.) the generated directory will contain the
+following files:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template create
+<span class="go">Template type: node</span>
+<span class="go">Template name: node</span>
+<span class="go">Model &#39;node&#39; created in ./node.</span>
+
+<span class="gp">$ </span>tree node
+<span class="go">node</span>
+<span class="go">├── files</span>
+<span class="go">│   ├── create.yml</span>
+<span class="go">│   └── delete.yml</span>
+<span class="go">├── NodeType.tosca</span>
+<span class="go">└── README.md</span>
+</pre></div>
+</div>
+<p>And if you decide to create a blueprint which should be a valid <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a>, you can do the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template create --type csar --name csar
+<span class="go">Blueprint (TOSCA CSAR) &#39;csar&#39; created in ./csar.</span>
+
+<span class="gp">$ </span>tree csar
+<span class="go">csar</span>
+<span class="go">├── files</span>
+<span class="go">│   ├── create.yml</span>
+<span class="go">│   └── delete.yml</span>
+<span class="go">├── README.md</span>
+<span class="go">├── ServiceTemplate.tosca</span>
+<span class="go">└── TOSCA-Metadata</span>
+<span class="go">    └── TOSCA.meta</span>
+</pre></div>
+</div>
+<p>After the basic files are generated you can edit them and upload your template to the library (you can use <code class="docutils literal notranslate"><span class="pre">save</span></code>
+CLI command).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The generated structure is similar to <a class="reference external" href="https://github.com/radon-h2020/radon-particles">RADON particles</a> and is compatible with <a class="reference external" href="https://projects.eclipse.org/projects/soa.winery">Eclipse Winery</a> modelling tool.</p>
+</div>
+<div class="section" id="save-template">
+<span id="cli-save-template"></span><h4>Save template<a class="headerlink" href="#save-template" title="Permalink to this headline"></a></h4>
+<p>To save a template user needs to provide a unique name of template, template’s privacy (only the user that added a
+private template can manage it), and version of the template (by default templates are private, for publishing your
+template publicly, add <code class="docutils literal notranslate"><span class="pre">--public</span></code> flag.).</p>
+<p>Here’s the example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>upload a public template to Template Library <span class="o">(</span>without README<span class="o">)</span>
+<span class="gp">$ </span>xopera-template-library template save --name AwsLambda --path example/AwsLambdaFunction --version <span class="m">0</span>.0.1 --public
+<span class="go">Path to README file (optional, can be left empty):</span>
+<span class="go">Description of the template: Testing TPS CLI TOSCA node upload</span>
+<span class="go">Template has been added successfully!</span>
+<span class="go">Version insertion was successful!</span>
+
+<span class="gp"># </span>save a private CSAR to Template Library <span class="o">(</span>with README<span class="o">)</span>
+<span class="gp">$ </span>xopera-template-library template save --name TestCSAR --path examples/csar --readme examples/README.md --version <span class="m">0</span>.0.1
+<span class="go">Description of the template: Testing TPS CLI TOSCA CSAR upload</span>
+<span class="go">Template has been added successfully!</span>
+<span class="go">Version insertion was successful!</span>
+</pre></div>
+</div>
+<p>The following arguments are required: <code class="docutils literal notranslate"><span class="pre">--name</span></code>, <code class="docutils literal notranslate"><span class="pre">--path</span></code>, <code class="docutils literal notranslate"><span class="pre">--version</span></code>. If <code class="docutils literal notranslate"><span class="pre">--public</span></code> flag is present, the
+template will be marked as public.</p>
+</div>
+<div class="section" id="get-template">
+<span id="id2"></span><h4>Get template<a class="headerlink" href="#get-template" title="Permalink to this headline"></a></h4>
+<p>A template can be downloaded from the database by its name.
+User also has to define the path where downloaded template directory will save.</p>
+<p>See the next example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template get --name AwsLambda --path AwsLambda
+<span class="go">Downloaded AwsLambda version 0.1.0 to &#39;AwsLambda&#39;.</span>
+
+<span class="gp">$ </span>xopera-template-library template get --name DemoBlueprintOpenFaaS --path DemoBlueprintOpenFaaS --version <span class="m">0</span>.5.0
+<span class="go">Downloaded DemoBlueprintOpenFaaS version 0.5.0 to &#39;DemoBlueprintOpenFaaS&#39;.</span>
+</pre></div>
+</div>
+<p>The following arguments are required: <code class="docutils literal notranslate"><span class="pre">--path</span></code>, <code class="docutils literal notranslate"><span class="pre">--name</span></code>. By default last version of template is downloaded.
+For other versions specify <code class="docutils literal notranslate"><span class="pre">--version</span></code>.</p>
+</div>
+<div class="section" id="list-and-filter-templates">
+<span id="cli-list-and-filter-templates"></span><h4>List and filter templates<a class="headerlink" href="#list-and-filter-templates" title="Permalink to this headline"></a></h4>
+<p>All the available templates or just a single template can be listed.
+By default this command lists all public templates and user’s private templates.
+Templates can also be filtered using their keyword, template type or publicity.</p>
+<p>Here’s some examples of listing and filtering:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template list
+<span class="go">+List of templates----------------+-------------------------+------+--------+------------+---------------------+</span>
+<span class="go">| ID | Name                       | Description             | Type | Public | Created by | Created at          |</span>
+<span class="go">+----+----------------------------+-------------------------+------+--------+------------+---------------------+</span>
+<span class="go">| 1  | AwsBucket                  | radon.nodes             | node | True   | admin      | 2020-05-29 11:51:12 |</span>
+<span class="go">| 2  | AwsLambda                  | radon.nodes.function    | node | True   | admin      | 2020-05-29 11:55:50 |</span>
+<span class="go">| 3  | AwsBucketNotification      | radon.nodes.triggers    | node | True   | admin      | 2020-05-29 11:59:03 |</span>
+<span class="go">| 4  | AwsRole                    | radon.policies          | node | True   | admin      | 2020-05-29 12:02:35 |</span>
+<span class="go">| 5  | AwsApiGateway              | radon.nodes.triggers    | node | True   | admin      | 2020-05-29 12:05:32 |</span>
+<span class="go">| 6  | AzureContainer             | radon.nodes             | node | True   | admin      | 2020-06-01 06:36:30 |</span>
+<span class="go">| 7  | AzureContainerNotification | radon.nodes             | node | True   | admin      | 2020-06-01 06:42:14 |</span>
+<span class="go">| 8  | AzureFunction              | radon.nodes             | node | True   | admin      | 2020-06-01 06:51:52 |</span>
+<span class="go">| 9  | MinIOBucket                | radon.nodes             | node | True   | admin      | 2020-06-01 07:44:56 |</span>
+<span class="go">| 10 | OpenFaaSFunction           | radon.nodes             | node | True   | admin      | 2020-06-01 08:01:33 |</span>
+<span class="go">| 11 | OpenFaaSFunctionBuild      | radon.nodes             | node | True   | admin      | 2020-06-01 08:37:16 |</span>
+<span class="go">| 12 | DemoBlueprintAws           | node.blueprint          | csar | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">| 13 | GcpBucket                  | radon.nodes.GcpBucket   | node | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">| 14 | GcpFunction                | radon.nodes.GcpFunction | node | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">| 15 | DemoBlueprintGcp           | node.blueprint          | csar | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">+----+----------------------------+-------------------------+------+--------+------------+---------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library template list -h
+<span class="go">usage: xopera-template-library template list [-h] [--keyword KEYWORD]</span>
+<span class="go">                                             [--type TYPE] [--public PUBLIC]</span>
+
+<span class="go">optional arguments:</span>
+<span class="go">  -h, --help         show this help message and exit</span>
+<span class="go">  --keyword KEYWORD  Keyword in template name or description.</span>
+<span class="go">  --type TYPE        Template type name.</span>
+<span class="go">  --public PUBLIC    Public (true) or private (false) access.</span>
+
+<span class="gp">$ </span>xopera-template-library template list --keyword Aws --type node --public <span class="nb">true</span>
+<span class="go">+List of templates-----------+----------------------+------+--------+------------+---------------------+</span>
+<span class="go">| ID | Name                  | Description          | Type | Public | Created by | Created at          |</span>
+<span class="go">+----+-----------------------+----------------------+------+--------+------------+---------------------+</span>
+<span class="go">| 1  | AwsBucket             | radon.nodes          | node | True   | admin      | 2020-05-29 11:51:12 |</span>
+<span class="go">| 2  | AwsLambda             | radon.nodes.function | node | True   | admin      | 2020-05-29 11:55:50 |</span>
+<span class="go">| 3  | AwsBucketNotification | radon.nodes.triggers | node | True   | admin      | 2020-05-29 11:59:03 |</span>
+<span class="go">| 4  | AwsRole               | radon.policies       | node | True   | admin      | 2020-05-29 12:02:35 |</span>
+<span class="go">| 5  | AwsApiGateway         | radon.nodes.triggers | node | True   | admin      | 2020-05-29 12:05:32 |</span>
+<span class="go">+----+-----------------------+----------------------+------+--------+------------+---------------------+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="versions">
+<span id="cli-versions"></span><h4>Versions<a class="headerlink" href="#versions" title="Permalink to this headline"></a></h4>
+<p>Template versions can be listed by using <code class="docutils literal notranslate"><span class="pre">version</span></code> argument and template name.</p>
+<p>Example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template version --name AzureContainer
+<span class="go">+List of versions for AzureContainer+---------------------+</span>
+<span class="go">| Version name | Template file name | Created at          |</span>
+<span class="go">+--------------+--------------------+---------------------+</span>
+<span class="go">| 0.1.0        | NodeType.tosca     | 2020-06-01 06:42:14 |</span>
+<span class="go">| 0.2.0        | NodeType.tosca     | 2020-10-01 16:05:33 |</span>
+<span class="go">| 0.3.0        | NodeType.tosca     | 2020-12-15 10:55:26 |</span>
+<span class="go">+--------------+--------------------+---------------------+</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="template-groups">
+<span id="cli-template-groups"></span><h3>Template groups<a class="headerlink" href="#template-groups" title="Permalink to this headline"></a></h3>
+<p>Templates can be ordered in template groups.
+User can create a template group, list existing groups and get a list of templates in a template group.
+Template group owners can add and remove templates.</p>
+<p>Examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library template-group create --group_name MyGroup --group_description <span class="s2">&quot;My super models&quot;</span>
+<span class="go">Group was added successfully!</span>
+
+<span class="gp">$ </span>xopera-template-library template-group list
+<span class="go">+List of groups-----+-----------------+------------+---------------------+</span>
+<span class="go">| ID | Name         | Description     | Created by | Created at          |</span>
+<span class="go">+----+--------------+-----------------+------------+---------------------+</span>
+<span class="go">| 1  | AWS          | AWS models      | admin      | 2021-02-03 07:52:54 |</span>
+<span class="go">| 2  | Azure        | Azure models    | user1      | 2021-02-03 07:53:05 |</span>
+<span class="go">| 3  | GCP          | GCP models      | user2      | 2021-02-03 07:53:13 |</span>
+<span class="go">| 4  | OpenFaaS     | OpenFaaS models | user3      | 2021-02-03 07:53:27 |</span>
+<span class="go">| 5  | MyGroup      | My super models | user4      | 2021-02-03 07:53:27 |</span>
+<span class="go">+----+--------------+-----------------+------------+---------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library template-group add-template --group_name AWS --template_name AwsBucket
+<span class="go">Template was successfully added to the group!</span>
+
+<span class="gp">$ </span>xopera-template-library template-group get --group_name AWS
+<span class="go">+List of templates in template group &#39;AWS&#39;----------+------+--------+------------+---------------------+</span>
+<span class="go">| ID | Name                  | Description          | Type | Public | Created by | Created at          |</span>
+<span class="go">+----+-----------------------+----------------------+------+--------+------------+---------------------+</span>
+<span class="go">| 2  | AwsBucket             | radon.nodes          | node | True   | admin      | 2020-05-29 11:51:12 |</span>
+<span class="go">| 3  | AwsLambda             | radon.nodes.function | node | True   | admin      | 2020-05-29 11:55:50 |</span>
+<span class="go">| 4  | AwsBucketNotification | radon.nodes.triggers | node | True   | admin      | 2020-05-29 11:59:03 |</span>
+<span class="go">| 5  | AwsRole               | radon.policies       | node | True   | admin      | 2020-05-29 12:02:35 |</span>
+<span class="go">| 6  | AwsApiGateway         | radon.nodes.triggers | node | True   | admin      | 2020-05-29 12:05:32 |</span>
+<span class="go">| 13 | DemoBlueprintAws      | node.blueprint       | csar | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">+----+-----------------------+----------------------+------+--------+------------+---------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library template-group add-template --group_name AWS --template_name AwsBucket
+<span class="go">Template is already in that group!</span>
+
+<span class="gp">$ </span>xopera-template-library template-group remove-template --group_name AwsGroup --template_name AwsBucket
+<span class="go">Template was successfully removed from the group!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-groups">
+<span id="cli-user-groups"></span><h3>User groups<a class="headerlink" href="#user-groups" title="Permalink to this headline"></a></h3>
+<p>Users can be members of user groups.
+User groups can be granted access to groups of templates.
+User can create a user group, list existing groups, get a list of users in a given user group and get a list of
+template groups a user group is granted access to.
+User group owners can add and remove users and access to template groups.</p>
+<p>Some simple examples are below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library user-group create --group_name developers --group_description <span class="s2">&quot;Developers group&quot;</span>
+<span class="go">Group was added successfully!</span>
+
+<span class="gp">$ </span>xopera-template-library user-group list
+<span class="go">+List of groups-------+----------------+------------+---------------------+</span>
+<span class="go">| ID | Name           | Description    | Created by | Created at          |</span>
+<span class="go">+----+----------------+----------------+------------+---------------------+</span>
+<span class="go">| 1  | admin          | Admin users    | admin      | 2021-02-03 07:57:39 |</span>
+<span class="go">| 2  | La_Pulga       | Team Messi     | messi      | 2021-02-03 09:27:19 |</span>
+<span class="go">| 3  | El_Pibe_de_Oro | Team Maradona  | marado     | 2021-02-04 18:29:03 |</span>
+<span class="go">| 4  | O_Rei          | Team Pele      | pele       | 2021-02-04 14:53:17 |</span>
+<span class="go">| 5  | developers     | Dec team       | d10s       | 2021-02-04 14:53:17 |</span>
+<span class="go">+----+----------------+----------------+------------+---------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library user-group get-users --group_name El_Pibe_de_Oro
+
+<span class="go">+-----------------------+</span>
+<span class="go">| Username              |</span>
+<span class="go">+-----------------------+</span>
+<span class="go">| marado                |</span>
+<span class="go">| valdano               |</span>
+<span class="go">| burruchaga            |</span>
+<span class="go">+-----------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library user-group add-user --group_name La_Pulga --username xavi
+<span class="go">User was successfully added to the group!</span>
+
+<span class="gp">$ </span>xopera-template-library user-group remove-user --group_name La_Pulga --username suarez
+<span class="go">User was successfully removed from the group!</span>
+
+<span class="gp">$ </span>xopera-template-library user-group add-templates --user_group developers --template_group AWS
+<span class="go">Access to template group was added successfully!</span>
+
+<span class="gp">$ </span>xopera-template-library user-group add-templates --user_group developers --template_group Azure
+<span class="go">This user group already has access to this template group!</span>
+
+<span class="gp">$ </span>xopera-template-library user-group remove-templates --user_group developers --template_group GCP
+<span class="go">Access to template group was revoked successfully!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="users">
+<span id="cli-users"></span><h3>Users<a class="headerlink" href="#users" title="Permalink to this headline"></a></h3>
+<p>Users can look up their info, list user groups they are members of and list template groups they have access to.</p>
+<p>Here’s some examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library user info
+<span class="go">+User data-----------+--------------------+--------------------+---------------------+</span>
+<span class="go">| ID | Name          | Username           | Email              | Created at          |</span>
+<span class="go">+----+---------------+--------------------+--------------------+---------------------+</span>
+<span class="go">| 6  | Keycloak user | user@example.com   | user@example.com   | 2020-10-29 14:55:39 |</span>
+<span class="go">+----+---------------+--------------------+--------------------+---------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library user user-groups
+<span class="go">+List of groups-----------+------------+---------------------+</span>
+<span class="go">| ID | Name | Description | Created by | Created at          |</span>
+<span class="go">+----+------+-------------+------------+---------------------+</span>
+<span class="go">| 1  | xlab | Admin users | admin      | 2021-02-03 07:57:39 |</span>
+<span class="go">+----+------+-------------+------------+---------------------+</span>
+
+<span class="gp">$ </span>xopera-template-library user template-groups
+<span class="go">+List of template groups accessible by &#39;xlab&#39;--+---------------------+</span>
+<span class="go">| ID | Name     | Description     | Created by | Created at          |</span>
+<span class="go">+----+----------+-----------------+------------+---------------------+</span>
+<span class="go">| 1  | AWS      | AWS models      | admin      | 2021-02-03 07:52:54 |</span>
+<span class="go">| 2  | Azure    | Azure models    | admin      | 2021-02-03 07:53:05 |</span>
+<span class="go">| 3  | GCP      | GCP models      | admin      | 2021-02-03 07:53:13 |</span>
+<span class="go">| 4  | OpenFaaS | OpenFaaS models | admin      | 2021-02-03 07:53:27 |</span>
+<span class="go">+----+----------+-----------------+------------+---------------------+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="debugging">
+<span id="cli-debugging"></span><h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline"></a></h3>
+<p>If you have some problems when you are executing commands with the Template Library CLI you can use switch to debug
+mode.
+To debug your client add <code class="docutils literal notranslate"><span class="pre">-v</span></code> or <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument after calling <code class="docutils literal notranslate"><span class="pre">xopera-template-library</span></code>:</p>
+<p>Take a look at some examples below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xopera-template-library --verbose setup
+
+<span class="go">DEBUG:root:Metadata storage: /home/user/.config/template_library</span>
+<span class="go">DEBUG:root:[Errno 17] File exists: &#39;/home/user/.config/template_library&#39;</span>
+<span class="go">Current Template Library REST API endpoint: https://template-library-xopera.xlab.si/api</span>
+<span class="go">Modify API endpoint (press enter to keep the current):</span>
+<span class="go">Template Library REST API endpoint has been set to: https://template-library-xopera.xlab.si/api.</span>
+
+<span class="go">Current Keycloak auth endpoint: https://openid-xopera.xlab.si</span>
+<span class="go">Modify Keycloak endpoint (press enter to keep the current):</span>
+<span class="go">Keycloak endpoint has been set to: https://openid-xopera.xlab.si.</span>
+<span class="go">DEBUG:root:https://template-library-xopera.xlab.si/api</span>
+<span class="go">DEBUG:root:https://openid-xopera.xlab.si</span>
+
+<span class="gp">$ </span>xopera-template-library -v template list
+
+<span class="go">DEBUG:root:Metadata storage: /home/anzoman/.config/template_library</span>
+<span class="go">DEBUG:root:https://template-library-xopera.xlab.si/api</span>
+<span class="go">DEBUG:root:https://openid-xopera.xlab.si</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/templates/filter HTTP/1.1&quot; 200 1061</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/users?user_id=1 HTTP/1.1&quot; 200 154</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/users?user_id=1 HTTP/1.1&quot; 200 154</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/users?user_id=1 HTTP/1.1&quot; 200 154</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/users?user_id=1 HTTP/1.1&quot; 200 154</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/users?user_id=1 HTTP/1.1&quot; 200 154</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+<span class="go">DEBUG:urllib3.connectionpool:https://template-library-xopera.xlab.si:443 &quot;GET /api/users?user_id=1 HTTP/1.1&quot; 200 154</span>
+<span class="go">DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): template-library-xopera.xlab.si:443</span>
+
+<span class="go">+List of templates----------------+-------------------------+------+--------+------------+---------------------+</span>
+<span class="go">| ID | Name                       | Description             | Type | Public | Created by | Created at          |</span>
+<span class="go">+----+----------------------------+-------------------------+------+--------+------------+---------------------+</span>
+<span class="go">| 1  | AwsBucket                  | radon.nodes             | node | True   | admin      | 2020-05-29 11:51:12 |</span>
+<span class="go">| 2  | AwsLambda                  | radon.nodes.function    | node | True   | admin      | 2020-05-29 11:55:50 |</span>
+<span class="go">| 3  | AwsBucketNotification      | radon.nodes.triggers    | node | True   | admin      | 2020-05-29 11:59:03 |</span>
+<span class="go">| 4  | AwsRole                    | radon.policies          | node | True   | admin      | 2020-05-29 12:02:35 |</span>
+<span class="go">| 5  | AwsApiGateway              | radon.nodes.triggers    | node | True   | admin      | 2020-05-29 12:05:32 |</span>
+<span class="go">| 6  | AzureContainer             | radon.nodes             | node | True   | admin      | 2020-06-01 06:36:30 |</span>
+<span class="go">| 7  | AzureContainerNotification | radon.nodes             | node | True   | admin      | 2020-06-01 06:42:14 |</span>
+<span class="go">| 8  | AzureFunction              | radon.nodes             | node | True   | admin      | 2020-06-01 06:51:52 |</span>
+<span class="go">| 9  | MinIOBucket                | radon.nodes             | node | True   | admin      | 2020-06-01 07:44:56 |</span>
+<span class="go">| 10 | OpenFaaSFunction           | radon.nodes             | node | True   | admin      | 2020-06-01 08:01:33 |</span>
+<span class="go">| 11 | OpenFaaSFunctionBuild      | radon.nodes             | node | True   | admin      | 2020-06-01 08:37:16 |</span>
+<span class="go">| 12 | DemoBlueprintAws           | node.blueprint          | csar | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">| 13 | GcpBucket                  | radon.nodes.GcpBucket   | node | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">| 14 | GcpFunction                | radon.nodes.GcpFunction | node | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">| 15 | DemoBlueprintGcp           | node.blueprint          | csar | True   | admin      | 2020-07-21 10:04:22 |</span>
+<span class="go">+----+----------------------------+-------------------------+------+--------+------------+---------------------+</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="user-story">
+<span id="cli-user-story"></span><h2>User story<a class="headerlink" href="#user-story" title="Permalink to this headline"></a></h2>
+<p>This subsection provides a concrete usage scenario for the Template Library Command Line Interface which needs to be
+installed first (you can follow <a class="reference internal" href="#cli-installation"><span class="std std-ref">Installation</span></a> part).
+Here we are talking about the user named John who already has a Template Library account (John is an XLAB Keycloak
+user) and has already installed Template Library CLI into Python virtual environment.</p>
+<p>The story begins when John would like to create his own blueprint to deploy an application.
+Let’s say that he wants to create an AWS application for creating thumbnails from images.
+When an image is uploaded to the source AWS bucket, the bucket notification invokes the AWS Lambda resizing function
+that creates thumbnails and uploads them to the destination bucket where user can see them.
+John knows there are already a lot of modules/templates saved in the Template Library and he decides to use the tool
+via Template Library CLI.
+First he has to setup the CLI and log in with his credentials.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library setup
+<span class="go">Current Template Library REST API endpoint: https://template-library-xopera.xlab.si/api</span>
+<span class="go">Modify API endpoint (press enter to keep the current):</span>
+<span class="go">Template Library REST API endpoint has been set to: https://template-library-xopera.xlab.si/api.</span>
+
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library login --username johnsmith --password johnssecurepass123
+<span class="go">User &#39;johnsmith&#39; logged in.</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t be like John.
+Omit the <code class="docutils literal notranslate"><span class="pre">--password</span></code> switch and rather type in your password through prompt.</p>
+</div>
+<p>After that the program is ready to use.
+John can now generate his project folder and a startup blueprint (<a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a>) file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library template create --type csar --name csar
+<span class="go">Template type: csar</span>
+<span class="go">Template name: johns-project</span>
+<span class="go">Blueprint (TOSCA CSAR) &#39;csar&#39; created in ./johns-project.</span>
+
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>tree johns-project
+<span class="go">johns-project</span>
+<span class="go">├── files</span>
+<span class="go">│   ├── create.yml</span>
+<span class="go">│   └── delete.yml</span>
+<span class="go">├── README.md</span>
+<span class="go">├── ServiceTemplate.tosca</span>
+<span class="go">└── TOSCA-Metadata</span>
+<span class="go">    └── TOSCA.meta</span>
+
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>cat johns-project/TOSCA-Metadata/TOSCA.meta
+<span class="go">TOSCA-Meta-File-Version: &#39;1.1&#39;</span>
+<span class="go">CSAR-Version: &#39;1.1&#39;</span>
+<span class="go">Created-By: Template Library CLI</span>
+<span class="go">Entry-Definitions: ServiceTemplate.tosca</span>
+</pre></div>
+</div>
+<p>Template Library CLI has generated a valid <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a> for John which is evident from <cite>TOSCA-Metadata/TOSCA.meta</cite>
+file.
+Then he lists all public templates in the Template Library to see what he can use with <code class="docutils literal notranslate"><span class="pre">template</span> <span class="pre">list</span></code> CLI command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library template list
+
+<span class="go">+List of templates----------------+-------------------------+------+--------+------------+---------------------+</span>
+<span class="go">| ID | Name                       | Description             | Type | Public | Created by | Created at          |</span>
+<span class="go">+----+----------------------------+-------------------------+------+--------+------------+---------------------+</span>
+<span class="go">| 1  | AwsBucket                  | radon.nodes             | node | True   | admin      | 2020-05-29 11:51:12 |</span>
+<span class="go">| 2  | AwsLambda                  | radon.nodes.function    | node | True   | admin      | 2020-05-29 11:55:50 |</span>
+<span class="go">| 3  | AwsBucketNotification      | radon.nodes.triggers    | node | True   | admin      | 2020-05-29 11:59:03 |</span>
+<span class="go">| 4  | AwsRole                    | radon.policies          | node | True   | admin      | 2020-05-29 12:02:35 |</span>
+<span class="go">| 5  | AwsApiGateway              | radon.nodes.triggers    | node | True   | admin      | 2020-05-29 12:05:32 |</span>
+<span class="go">| 6  | AzureContainer             | radon.nodes             | node | True   | admin      | 2020-06-01 06:36:30 |</span>
+<span class="go">| 7  | AzureContainerNotification | radon.nodes             | node | True   | admin      | 2020-06-01 06:42:14 |</span>
+<span class="go">| 8  | AzureFunction              | radon.nodes             | node | True   | admin      | 2020-06-01 06:51:52 |</span>
+<span class="go">+----+----------------------------+-------------------------+------+--------+------------+---------------------+</span>
+</pre></div>
+</div>
+<p>He decides on <cite>AwsLambda</cite> and <cite>AwsBucket</cite> and downloads the templates.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library entity-template get --path johns-project/files/AwsLambda
+<span class="go">Downloaded AwsLambda version 0.1.0 to &#39;AwsLambda&#39;.</span>
+
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library entity-template get --path johns-project/files/AwsBucket
+<span class="go">Downloaded AwsBucket version 0.1.0 to &#39;AwsBucket&#39;.</span>
+</pre></div>
+</div>
+<p>He erases some unneeded files and modifies his TOSCA service template.
+His structure now looks like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>tree johns-project
+<span class="go">johns-project</span>
+<span class="go">├── files</span>
+<span class="go">│   ├── AwsBucket</span>
+<span class="go">│   │   ├── files</span>
+<span class="go">│   │   │   ├── create.yml</span>
+<span class="go">│   │   │   └── delete.yml</span>
+<span class="go">│   │   └── NodeType.tosca</span>
+<span class="go">│   ├── AwsLambda</span>
+<span class="go">│   │   ├── files</span>
+<span class="go">│   │   │   ├── create.yml</span>
+<span class="go">│   │   │   └── delete.yml</span>
+<span class="go">│   │   └── NodeType.tosca</span>
+<span class="go">├── README.md</span>
+<span class="go">├── ServiceTemplate.tosca</span>
+<span class="go">└── TOSCA-Metadata</span>
+<span class="go">    └── TOSCA.meta</span>
+</pre></div>
+</div>
+<p>But he also wants to add module for AWS Bucket Notification.
+To make things easier he uses <code class="docutils literal notranslate"><span class="pre">template</span> <span class="pre">create</span></code> CLI command to generate the necessary files and directories.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library template create
+<span class="go">Template type: node</span>
+<span class="go">Template name: johns-project/files/AwsBucketNotification</span>
+<span class="go">Model &#39;AwsBucketNotification&#39; created in johns-project/files/AwsBucketNotification.</span>
+
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>tree johns-project
+<span class="go">johns-project</span>
+<span class="go">├── files</span>
+<span class="go">│   ├── AwsBucket</span>
+<span class="go">│   │   ├── files</span>
+<span class="go">│   │   │   ├── create.yml</span>
+<span class="go">│   │   │   └── delete.yml</span>
+<span class="go">│   │   └── NodeType.tosca</span>
+<span class="go">│   ├── AwsBucketNotification</span>
+<span class="go">│   │   ├── files</span>
+<span class="go">│   │   │   ├── create.yml</span>
+<span class="go">│   │   │   └── delete.yml</span>
+<span class="go">│   │   └── NodeType.tosca</span>
+<span class="go">│   ├── AwsLambda</span>
+<span class="go">│   │   ├── files</span>
+<span class="go">│   │   │   ├── create.yml</span>
+<span class="go">│   │   │   └── delete.yml</span>
+<span class="go">│   │   └── NodeType.tosca</span>
+<span class="go">├── README.md</span>
+<span class="go">├── ServiceTemplate.tosca</span>
+<span class="go">└── TOSCA-Metadata</span>
+<span class="go">    └── TOSCA.meta</span>
+</pre></div>
+</div>
+<p>John modifies his TOSCA service template and includes the created <cite>AwsBucketNotification</cite> module.
+Now his blueprint is prepared and he can test it with the TOSCA orchestrator (like <a class="reference external" href="https://github.com/xlab-si/xopera-opera">opera</a>) to see how the deployment
+works (we will skip this part since this is not the point here).
+John thinks his blueprint is pretty good, so he decides to add it to the public Template Library collection because
+sharing is caring.
+Before he does that he should compress his files (a valid <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a> is usually a zip file).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span><span class="nb">cd</span> johns-project
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>zip -r JohnsBlueprint.zip ServiceTemplate.tosca files TOSCA-Metadata
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>xopera-template-library template save --name JohnsBlueprint --path johns-project/JohnsBlueprint.zip --public_access True --version <span class="m">0</span>.0.1
+<span class="go">Path to README file (optional, can be left empty):</span>
+<span class="go">Description of the template: Johns blueprint with AWS thumbnail generator</span>
+<span class="go">Template has been added successfully!</span>
+<span class="go">Version insertion was successful!</span>
+</pre></div>
+</div>
+<p>John has submitted his blueprint and others can now download it from Template Library to test his magnificent work.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some parts of blueprint preparation such as AWS Lambda function preparation CSAR validation are skipped for brevity.</p>
+</div>
+</div>
+<div class="section" id="tps-cli-video">
+<span id="id3"></span><h2>TPS CLI video<a class="headerlink" href="#tps-cli-video" title="Permalink to this headline"></a></h2>
+<p>In the video below we present the TPS and how to use it through the CLI.
+Template Library CLI is a client tool that is connected to the TPS REST API.
+The tool can be used from the user’s console for managing templates, blueprints and their versions.
+It is here to save you from executing complex curl requests and will offer you to easily access and operate with the
+Template Library.
+The CLI tool goes by the name <a class="reference external" href="https://pypi.org/project/xopera-template-library">xopera-template-library</a> and you can install it as a Python package from <a class="reference external" href="https://pypi.org/project/xopera-template-library">PyPI</a>.</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/28eTwojw5ac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+<div class="section" id="cli-commands">
+<span id="id4"></span><h2>CLI commands<a class="headerlink" href="#cli-commands" title="Permalink to this headline"></a></h2>
+<p>The next section lists and describes all Template Library CLI commands and their options.</p>
+<hr class="docutils" />
+<div class="section" id="setup-command">
+<span id="id5"></span><h3>setup<a class="headerlink" href="#setup-command" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+<div class="section" id="login">
+<span id="login-command"></span><h3>login<a class="headerlink" href="#login" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+<div class="section" id="logout">
+<span id="logout-command"></span><h3>logout<a class="headerlink" href="#logout" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+<div class="section" id="user">
+<span id="user-command"></span><h3>user<a class="headerlink" href="#user" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+<div class="section" id="user-group">
+<span id="user-group-command"></span><h3>user-group<a class="headerlink" href="#user-group" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+<div class="section" id="template">
+<span id="template-command"></span><h3>template<a class="headerlink" href="#template" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+<div class="section" id="template-group">
+<span id="template-group-command"></span><h3>template-group<a class="headerlink" href="#template-group" title="Permalink to this headline"></a></h3>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="Template Library REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plugin.html" class="btn btn-neutral float-right" title="Template Library plugin for VS Code/Eclipse Che" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xOpera team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

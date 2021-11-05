@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Template Library  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/xlab-favicon-16x16.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Template Library GUI" href="gui.html" />
+    <link rel="prev" title="Welcome to Template Library’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Template Library
+            <img src="_static/xopera-tps-mark-black-mid.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose-and-description">Purpose and description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functionalities">Functionalities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#available-services">Available services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#business-value">Business value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-library-and-xopera-saas-overview">Template Library and xOpera SaaS overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">Template Library GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Template Library REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Template Library CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugin.html">Template Library plugin for VS Code/Eclipse Che</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Template Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="introduction">
+<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<div class="figure align-center" id="tps-mark-logo">
+<a class="reference external image-reference" href="_images/xopera-tps-mark-black-text-mid.png"><img alt="_images/xopera-tps-mark-black-text-mid.png" src="_images/xopera-tps-mark-black-text-mid.png" style="width: 40%;" /></a>
+</div>
+<p>The Template Library is a place to manage your <a class="reference external" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=tosca">OASIS TOSCA</a> orchestration modules (TOSCA templates), blueprints
+(TOSCA CSARs) and publish the implementations (e.g. Ansible playbooks) of the modules. The organisation and managing of
+the TOSCA content can be divided in three user scenarios:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Individual user</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Community collaboration</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Enterprise and advanced use</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>User can manage the material by herself locally, but when she starts to collaborate with others, better tools
+are required as a repository or a special publishing tool.</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>For a simple collaboration within the open communities and research groups an organised and
+online library needs to be used. One example of this kind of library is <a class="reference external" href="https://github.com/radon-h2020/radon-particles">RADON Particles</a>, based on the GitHub
+repository. This open repository of TOSCA templates allows users to share, contribute to and use templates.</p>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>Enterprise, advanced use, template publishing server is the next scenario. Advanced users build complex
+applications based on TOSCA models, therefore strict dependencies can tightly couple specific groups of modules.
+New versions of modules can result in new issues that make applications, based on them, defective. The goal of
+Template Library publishing service is to simplify the complexity of managing multiple versions of TOSCA
+templates and to serve as a publishing service that does not permit changes of published content and persuades
+users to organise each modification in new versions. Moreover this approach also allows to have a private content
+and sharing of the content inside groups. This is the basis for business model of selling model templates.</p>
+</div></div>
+<p>This documentation will focus on <strong>publishing service</strong> version of the application.</p>
+<div class="section" id="purpose-and-description">
+<span id="id2"></span><h2>Purpose and description<a class="headerlink" href="#purpose-and-description" title="Permalink to this headline"></a></h2>
+<p>A Template Library is a service or shared repository that can hold the knowledge about:</p>
+<ul class="simple">
+<li><p>module templates (e.g. TOSCA templates)</p></li>
+<li><p>module implementations (e.g. Ansible playbooks behind TOSCA templates)</p></li>
+<li><p>blueprints (e.g. the whole application designs created from TOSCA CSARs)</p></li>
+</ul>
+<div class="section" id="functionalities">
+<span id="id3"></span><h3>Functionalities<a class="headerlink" href="#functionalities" title="Permalink to this headline"></a></h3>
+<p>Template Library brings the following functionalities:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>User and group management:</dt><dd><ul>
+<li><p>registration</p></li>
+<li><p>create groups</p></li>
+<li><p>share content</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Search:</dt><dd><ul>
+<li><p>search over the content metadata</p></li>
+<li><p>list content by categories</p></li>
+<li><p>show basic info about TOSCA templates</p></li>
+<li><p>display versions and developers/release notes</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Published content, including:</dt><dd><ul>
+<li><p>Version</p></li>
+<li><p>Description</p></li>
+<li><p>content (zip, file, folder)</p></li>
+<li><p>link to code (e.g. Github)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="available-services">
+<span id="id4"></span><h3>Available services<a class="headerlink" href="#available-services" title="Permalink to this headline"></a></h3>
+<p>All currently available Template Library’s services and tools are:</p>
+<ul class="simple">
+<li><p><strong>Template Library GUI</strong>: <a class="reference external" href="https://template-library-xopera.xlab.si/">template-library-xopera.xlab.si/</a></p></li>
+<li><p><strong>Template Library REST API</strong>: <a class="reference external" href="https://template-library-xopera.xlab.si/api/">template-library-xopera.xlab.si/api/</a></p></li>
+<li><p><strong>Template Library REST API Swagger UI</strong>: <a class="reference external" href="https://template-library-xopera.xlab.si/swagger/">template-library-xopera.xlab.si/swagger/</a></p></li>
+<li><p><strong>Template Library CLI</strong>: <a class="reference external" href="https://pypi.org/project/xopera-template-library">xopera-template-library</a></p></li>
+<li><p><strong>Template Library VS Code/Eclipse Che Theia plugin</strong>: <a class="reference external" href="https://github.com/xlab-si/template-library-vscode-plugin">template-library-vscode-plugin</a></p></li>
+<li><p><strong>Documentation</strong>: <a class="reference external" href="https://template-library-xopera.xlab.si/docs/">template-library-xopera.xlab.si/docs/</a></p></li>
+</ul>
+</div>
+<div class="section" id="business-value">
+<span id="id5"></span><h3>Business value<a class="headerlink" href="#business-value" title="Permalink to this headline"></a></h3>
+<p>The Template Library is a unique place for managing TOSCA modules, implementations and blueprints. Business value of
+this tool is twofold. First, it is a valuable content broker between application developers and (Dev)Ops. Both groups
+can version and publish their modules and applications and make them available through the Template Library service.
+Second, Template Library equips users with the content for developing applications. This content could be public or on
+the restricted access area, which makes open opportunities for the developers of the modules and applications to create
+and offer a valuable content through the Template Library.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To prevent any possible confusions remember that Template Library (service) or its parts may also be called TPS
+(Template Publishing Service) or TLPS (Template Library Publishing Service).</p>
+</div>
+</div>
+<div class="section" id="template-library-and-xopera-saas-overview">
+<span id="id6"></span><h3>Template Library and xOpera SaaS overview<a class="headerlink" href="#template-library-and-xopera-saas-overview" title="Permalink to this headline"></a></h3>
+<p>The <a class="reference external" href="https://xlab-si.github.io/xopera-docs/">xOpera</a> ecosystem includes tools that target optimizing deployment processes and reducing the human factor along
+with a faster preparation of deployment scripts. The video presented in this blog points out the most crucial
+functionalities of xOpera SaaS and TPS:</p>
+<ul class="simple">
+<li><p>Template Library Publishing Service (TPS) opens up a place for publishing, storing, managing, downloading and
+versioning of OASIS TOSCA modules and blueprints (i.e., TOSCA CSARs).</p></li>
+<li><p>Similar templates can be grouped together to form a FaaS abstraction layer such as a bundle of ready to use templates
+for deployment to cloud providers (e.g., AWS, Azure, GCP, OpenFaaS, etc.).</p></li>
+<li><p>Template groups in TPS can be used for connecting to corresponding groups of users and therefore enable working on
+different templates in a team and sharing them with other teams later.</p></li>
+<li><p>TPS brings different modes of interaction such as REST API, CLI client, browser-based GUI and Eclipse Che/VS Code
+plugin.</p></li>
+<li><p>Published deployment scripts in TPS can orchestrate the deployment with xOpera SaaS, which introduces a browser
+service for orchestration with a lightweight opera orchestrator compliant with OASIS TOSCA standard and powered by
+Ansible automation engine.</p></li>
+<li><p>Users can choose the corresponding templates and create a new project, secrets and credentials for deployment. Then
+they can deploy the application and observe the progress and status of the deployment.</p></li>
+<li><p>It is possible to organize multiple projects in multiple workspaces, manage provider credentials and assign them
+directly to workspaces. They can all run concurrently and users can even share the workspaces with other members.</p></li>
+<li><p>Apart from standard validation, deployment and un-deployment, xOpera SaaS also offers more complex orchestration
+actions such as redeployment, discovering template differences or invoking TOSCA policy triggers to enable vertical
+or horizontal scaling.</p></li>
+<li><p>The SaaS component is available through an API, GUI or Eclipse Che/VS Code plugin. The core part of the SaaS is the
+<a class="reference external" href="https://pypi.org/project/opera/">opera</a> orchestrator, which is CLI and can be installed as a Python package from PyPI.</p></li>
+</ul>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/0hpKJ_LBlk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><p>The following videos show how Template Library and xOpera SaaS work in action:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/28eTwojw5ac">TPS with CLI</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/vCjfZ4Iue0E">TPS with Eclipse Che</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/T4XviKWLc-A">xOpera SaaS with GUI</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/SIiLOe5dSqc">xOpera SaaS with Eclipse Che</a></p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The blueprints stored in Template Library can be deployed with TOSCA orchestrator such as <a class="reference external" href="https://xlab-si.github.io/xopera-docs/">xOpera</a> orchestrator
+called <a class="reference external" href="https://pypi.org/project/opera/">opera</a>, which can be installed as a Python package.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Template Library’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gui.html" class="btn btn-neutral float-right" title="Template Library GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xOpera team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

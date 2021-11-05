@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Library plugin for VS Code/Eclipse Che &mdash; Template Library  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/xlab-favicon-16x16.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Template Library CLI" href="cli.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Template Library
+            <img src="_static/xopera-tps-mark-black-mid.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">Template Library GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Template Library REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Template Library CLI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Template Library plugin for VS Code/Eclipse Che</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#manual-installation-and-publishing">Manual installation and publishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vs-code-installation">VS Code installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eclipse-che-theia-installation">Eclipse Che Theia installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publishing">Publishing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-features">Main features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plugin-usage">Plugin Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#template-library-authentication">Template Library authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-library-set-rest-api-endpoint">Template Library set REST API endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-library-config-actions">Template Library config actions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-template-json-config">Create template JSON config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upload-template-version-json-config">Upload template version JSON config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-template-version-json-config">Download template version JSON config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#template-library-interactive-actions">Template Library interactive actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-library-delete-login-info">Template Library delete login info</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tps-che-plugin-video">TPS Che plugin video</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Template Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Template Library plugin for VS Code/Eclipse Che</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/plugin.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="template-library-plugin-for-vs-code-eclipse-che">
+<span id="plugin"></span><h1>Template Library plugin for VS Code/Eclipse Che<a class="headerlink" href="#template-library-plugin-for-vs-code-eclipse-che" title="Permalink to this headline"></a></h1>
+<p>The Template Library also has <a class="reference external" href="https://www.eclipse.org/che">Eclipse Che</a> (<a class="reference external" href="https://theia-ide.org">Eclipse Theia</a>) and <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> plugin.
+The plugin is available on <a class="reference external" href="https://open-vsx.org/extension/xlab/template-library">Open VSX Registry</a> and <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=xlab.template-library">VS Marketplace</a>.
+The code can also be explored in <a class="reference external" href="https://github.com/xlab-si/template-library-vscode-plugin">template-library-vscode-plugin</a> GitHub repository.</p>
+<p>The Template Library VS Code/Eclipse Che plugin is used for communication between Template Library and the
+<a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> or <a class="reference external" href="https://theia-ide.org">Eclipse Theia</a>.
+Using the plugin, the user is able to manage, store and retrieve his TOSCA modules (templates, blueprints
+(<a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a> files)) and their implementations (e.g. Ansible playbooks) from <a class="reference external" href="https://theia-ide.org">Eclipse Theia</a> or
+<a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a>.
+Template Library plugin is also used in <a class="reference external" href="https://github.com/radon-h2020/radon-ide">RADON IDE</a>.</p>
+<div class="section" id="manual-installation-and-publishing">
+<span id="id1"></span><h2>Manual installation and publishing<a class="headerlink" href="#manual-installation-and-publishing" title="Permalink to this headline"></a></h2>
+<p>You can freely skip this part because the plugin can be installed through <a class="reference external" href="https://open-vsx.org/extension/xlab/template-library">Open VSX Registry</a> or <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=xlab.template-library">VS Marketplace</a>.
+This is originally a <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> extension/plugin, so the best way to test it locally is to through VS Code’s
+extension development host.
+<a class="reference external" href="https://www.eclipse.org/che">Eclipse Che</a> uses an open-source cloud and desktop IDE framework called
+<a class="reference external" href="https://theia-ide.org">Eclipse Theia</a> within the workspaces.
+<a class="reference external" href="https://theia-ide.org">Eclipse Theia</a> Cloud &amp; Desktop IDE Platform that is used within Eclipse Che workspaces is very similar to VS Code and
+therefore VS Code extensions can be also used in Theia.</p>
+<div class="section" id="vs-code-installation">
+<span id="id2"></span><h3>VS Code installation<a class="headerlink" href="#vs-code-installation" title="Permalink to this headline"></a></h3>
+<p>To install the plugin to your Visual Studio Code editor you will need the latest <cite>vsix</cite> plugin package which you can
+get from here: <a class="reference external" href="https://github.com/radon-h2020/radon-plugin-registry">RADON plugin registry</a>.
+Then you just have to import the <cite>vsix</cite> file to the VS Code plugins.</p>
+<div class="figure align-center" id="id16">
+<span id="plugin-install"></span><a class="reference external image-reference" href="_images/install.png"><img alt="_images/install.png" src="_images/install.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Template Library plugin VS Code installation.</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</div>
+<p>After that you will be able to use the plugin in any VS Code window.</p>
+<div class="figure align-center" id="id17">
+<span id="plugin-installed"></span><a class="reference external image-reference" href="_images/installed.png"><img alt="_images/installed.png" src="_images/installed.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Template Library plugin installed.</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="eclipse-che-theia-installation">
+<span id="id3"></span><h3>Eclipse Che Theia installation<a class="headerlink" href="#eclipse-che-theia-installation" title="Permalink to this headline"></a></h3>
+<p>TPS plugin is primarily meant for usage in <a class="reference external" href="https://theia-ide.org">Eclipse Theia</a> which is the main editor in the <a class="reference external" href="https://www.eclipse.org/che">Eclipse Che</a>.
+To install the plugin to Che you will need the prepared YAML devfile (which also uses the prepared <cite>meta.yaml</cite> file).
+The files to try this can be found in <a class="reference external" href="https://github.com/radon-h2020/radon-template-library-publishing-service-plugin/tree/master/publishing-samples">Template Library publishing-samples from GitHub</a>.</p>
+</div>
+<div class="section" id="publishing">
+<span id="id4"></span><h3>Publishing<a class="headerlink" href="#publishing" title="Permalink to this headline"></a></h3>
+<p>Here’s what you need to do to test the plugin and to package/publish it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install Node JS from &#39;https://nodejs.org/en/download/&#39;</span>
+<span class="c1"># and test it with node -v and npm -v command</span>
+
+<span class="c1"># install prerequisite packages</span>
+npm install
+
+<span class="c1"># test the plugin in VS Code (this will open a new window with your extension loaded)</span>
+press F5 <span class="o">(</span>Run Extension<span class="o">)</span>
+
+<span class="c1"># package and publish the extension</span>
+<span class="c1"># if you don&#39;t have npx install it with: npm install npx</span>
+npx vsce package
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="main-features">
+<span id="id5"></span><h2>Main features<a class="headerlink" href="#main-features" title="Permalink to this headline"></a></h2>
+<p>The extension uses <a class="reference external" href="https://template-library-xopera.xlab.si/swagger/">Template Library REST API</a> and can therefore invoke various Template Library actions.</p>
+<p>Currently, supported actions are:</p>
+<ul class="simple">
+<li><p>setting Template Library REST API endpoint</p></li>
+<li><p>creating and publishing TOSCA template or CSAR and its version</p></li>
+<li><p>downloading a specific template version files</p></li>
+<li><p>deleting saved login info (<a class="reference external" href="https://www.keycloak.org/">Keycloak</a> cookies)</p></li>
+</ul>
+</div>
+<div class="section" id="plugin-usage">
+<span id="id6"></span><h2>Plugin Usage<a class="headerlink" href="#plugin-usage" title="Permalink to this headline"></a></h2>
+<p>The plugin is invoked by right clicking on the file from file explorer or in the editor.
+There are four commands that can be selected from the dropdown options and these are further explained within the next
+sections.</p>
+<div class="figure align-center" id="id18">
+<span id="plugin-commands"></span><a class="reference external image-reference" href="_images/commands.png"><img alt="_images/commands.png" src="_images/commands.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Template Library plugin commands.</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="template-library-authentication">
+<span id="id7"></span><h3>Template Library authentication<a class="headerlink" href="#template-library-authentication" title="Permalink to this headline"></a></h3>
+<p>When right clicking on any Template Library plugin command (except from set API endpoint and clean login info
+commands), the extension will verify user’s credentials if the data has been saved.
+So, the first time when user wants to use the plugin, he will be offered a set of options to select the preferred
+authentication method for the Template library.
+Since Template Library auth works through <a class="reference external" href="https://www.keycloak.org/">Keycloak</a>, there can be multiple login methods.
+You can login with:</p>
+<ul class="simple">
+<li><p>default <a class="reference external" href="https://openid-xopera.xlab.si/auth/realms/master/account">XLAB Keycloak</a> credentials</p></li>
+<li><p>other identity providers that are connected to the Keycloak instance</p></li>
+</ul>
+<div class="figure align-center" id="id19">
+<span id="plugin-auth"></span><a class="reference external image-reference" href="_images/auth_methods.png"><img alt="_images/auth_methods.png" src="_images/auth_methods.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Template Library plugin auth.</span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</div>
+<p>If the login does not succeed, you will be warned and will have to login again.
+If the login succeeds, the Keycloak auth cookies will be stored into the local storage and next time you invoke the any
+plugin command, you won’t have to login again.
+But if you for instance set Template Library API endpoint to something else or if you wish to login as another Keycloak
+user, the it is wise to clear saved login data by invoking the “Delete login info” action.</p>
+<div class="figure align-center" id="id20">
+<span id="plugin-login-password"></span><a class="reference external image-reference" href="_images/login_password.png"><img alt="_images/login_password.png" src="_images/login_password.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Password prompt for Template Library plugin.</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="template-library-set-rest-api-endpoint">
+<span id="id8"></span><h3>Template Library set REST API endpoint<a class="headerlink" href="#template-library-set-rest-api-endpoint" title="Permalink to this headline"></a></h3>
+<p>This command is used to set TPS REST API endpoint that will be used for executing the TPS HTTP requests.
+The default value here is <cite>https://template-library-xopera.xlab.si/api</cite> which is pointing to the public TPS REST API URL.
+This command was meant mostly for testing different versions of TPS API so currently there is no need to change it.</p>
+<div class="figure align-center" id="id21">
+<span id="plugin-set-api-endpoint"></span><a class="reference external image-reference" href="_images/set_api_endpoint.png"><img alt="_images/set_api_endpoint.png" src="_images/set_api_endpoint.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Set Template Library API endpoint for Template Library plugin.</span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="template-library-config-actions">
+<span id="id9"></span><h3>Template Library config actions<a class="headerlink" href="#template-library-config-actions" title="Permalink to this headline"></a></h3>
+<p>If you choose this option the TPS actions can be invoked via JSON config file.
+If you right clicked on the JSON file (from the editor or from the file explorer) you will be offered to chose it as a
+config file.
+If not, you will be asked to select this configuration file from other folders.</p>
+<p>JSON object that is present in the config file should follow an exact structure with which depends on the type of the
+action.
+The JSON keys specified are not mutually exclusive so you can execute multiple TPS actions with one JSON config file.</p>
+<div class="section" id="create-template-json-config">
+<span id="id10"></span><h4>Create template JSON config<a class="headerlink" href="#create-template-json-config" title="Permalink to this headline"></a></h4>
+<p>JSON object for creating a template must have all these keys:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>JSON key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>uploadTemplateName</strong></p></td>
+<td><p>Template name you want to create</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>uploadTemplateDescription</strong></p></td>
+<td><p>Template description</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>uploadTemplateTypeName</strong></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Template type name (one of: data, artifact, capability, requirement,</div>
+<div class="line">relationship, interface, node, group, policy, csar, other)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>uploadPublicAccess</strong></p></td>
+<td><p>Make template publicly visible for other TPS users (true/false)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;uploadTemplateName&quot;</span><span class="p">:</span> <span class="s2">&quot;awsBucket&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uploadTemplateDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS bucket node&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uploadTemplateTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uploadPublicAccess&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id22">
+<span id="plugin-upload-config"></span><a class="reference external image-reference" href="_images/upload_config.png"><img alt="_images/upload_config.png" src="_images/upload_config.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Upload config action.</span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="upload-template-version-json-config">
+<span id="id11"></span><h4>Upload template version JSON config<a class="headerlink" href="#upload-template-version-json-config" title="Permalink to this headline"></a></h4>
+<p>When uploading a template version you can use the following keys (<cite>upload_readme_file</cite> is optional):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>JSON key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>uploadVersionName</strong></p></td>
+<td><p>Semantic version name</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>uploadReadmeFile</strong></p></td>
+<td><p>Optional path to README file to upload</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>uploadTemplateFile</strong></p></td>
+<td><p>TOSCA YAML service template file or compressed <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;uploadVersionName&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1.5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uploadReadmeFile&quot;</span><span class="p">:</span> <span class="s2">&quot;./aws_bucket/README.md&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uploadTemplateFile&quot;</span><span class="p">:</span> <span class="s2">&quot;./aws_bucket/AwsBucket.zip&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id23">
+<span id="plugin-upload-success"></span><a class="reference external image-reference" href="_images/upload_success.png"><img alt="_images/upload_success.png" src="_images/upload_success.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Successful template version upload.</span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="download-template-version-json-config">
+<span id="id12"></span><h4>Download template version JSON config<a class="headerlink" href="#download-template-version-json-config" title="Permalink to this headline"></a></h4>
+<p>When downloading template version files you will get all version files (TOSCA template and playbooks) compressed in a
+zip file.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>JSON key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>downloadTemplateName</strong></p></td>
+<td><p>Name of the template you want to download</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>downloadVersionName</strong></p></td>
+<td><p>Semantic template version you want to get files from (e.g. <cite>3.5.8</cite>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>downloadPath</strong></p></td>
+<td><p>Path where the downloaded file will be stored</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;downloadTemplateName&quot;</span><span class="p">:</span> <span class="s2">&quot;awsBucket&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;downloadVersionName&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1.5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;downloadPath&quot;</span><span class="p">:</span> <span class="s2">&quot;./AwsBucket.zip&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id24">
+<span id="plugin-download-config"></span><a class="reference external image-reference" href="_images/download_config.png"><img alt="_images/download_config.png" src="_images/download_config.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Download config action.</span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id25">
+<span id="plugin-download-success"></span><a class="reference external image-reference" href="_images/download_success.png"><img alt="_images/download_success.png" src="_images/download_success.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Successful template version download.</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="template-library-interactive-actions">
+<span id="id13"></span><h3>Template Library interactive actions<a class="headerlink" href="#template-library-interactive-actions" title="Permalink to this headline"></a></h3>
+<p>This TPS <a class="reference external" href="https://www.eclipse.org/che">Eclipse Che</a> extension command will guide you through an interactive <a class="reference external" href="https://theia-ide.org">Eclipse Theia</a> tasks, where you will be
+able to create templates, upload template versions or download version files from Template Library service.
+A few images from the plugin are shown below.</p>
+<div class="figure align-center" id="id26">
+<span id="plugin-interactive-choices"></span><a class="reference external image-reference" href="_images/interactive_choices.png"><img alt="_images/interactive_choices.png" src="_images/interactive_choices.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Interactive action choices.</span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id27">
+<span id="plugin-template-action-choices"></span><a class="reference external image-reference" href="_images/template_action_choices.png"><img alt="_images/template_action_choices.png" src="_images/template_action_choices.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Template upload action choices.</span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id28">
+<span id="plugin-template-type-choices"></span><a class="reference external image-reference" href="_images/template_type_choices.png"><img alt="_images/template_type_choices.png" src="_images/template_type_choices.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Template type choices.</span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id29">
+<span id="plugin-pick-template-file"></span><a class="reference external image-reference" href="_images/pick_template_file.png"><img alt="_images/pick_template_file.png" src="_images/pick_template_file.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Pick template file for upload.</span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id30">
+<span id="plugin-pick-from-filesystem"></span><a class="reference external image-reference" href="_images/pick_from_filesystem.png"><img alt="_images/pick_from_filesystem.png" src="_images/pick_from_filesystem.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Pick template file from filesystem.</span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id31">
+<span id="plugin-interactive-pick-template"></span><a class="reference external image-reference" href="_images/download_interactive_pick_template.png"><img alt="_images/download_interactive_pick_template.png" src="_images/download_interactive_pick_template.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Pick template to download.</span><a class="headerlink" href="#id31" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id32">
+<span id="plugin-download-interactive-select-path"></span><a class="reference external image-reference" href="_images/download_interactive_select_path.png"><img alt="_images/download_interactive_select_path.png" src="_images/download_interactive_select_path.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Select download file path.</span><a class="headerlink" href="#id32" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="template-library-delete-login-info">
+<span id="id14"></span><h3>Template Library delete login info<a class="headerlink" href="#template-library-delete-login-info" title="Permalink to this headline"></a></h3>
+<p>This Template Library plugin command will make sure that the saved login data gets deleted (e.g. Keycloak cookies).
+After that you will have to login again if you activate any TPS commands.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information take a look at <a class="reference external" href="https://github.com/xlab-si/template-library-vscode-plugin">Template Library Che plugin GitHub repository</a>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also use <a class="reference external" href="https://pypi.org/project/xopera-template-library">Template Library CLI</a> in Theia workspace terminal.</p>
+</div>
+</div>
+</div>
+<div class="section" id="tps-che-plugin-video">
+<span id="id15"></span><h2>TPS Che plugin video<a class="headerlink" href="#tps-che-plugin-video" title="Permalink to this headline"></a></h2>
+<p>In the video below we present the TPS and how to use it through the <a class="reference external" href="https://www.eclipse.org/che">Eclipse Che</a> (<a class="reference external" href="https://github.com/radon-h2020/radon-ide">RADON IDE</a>).</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/vCjfZ4Iue0E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cli.html" class="btn btn-neutral float-left" title="Template Library CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xOpera team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
