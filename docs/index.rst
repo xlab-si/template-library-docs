@@ -18,6 +18,13 @@ The following documentation explains how to use the Template Library service.
     api
     cli
     plugin
+
+.. toctree::
+    :caption: More info
+
+    contact
+    GitHub <https://github.com/xlab-si/template-library-docs>
+
 ..
     Indices and tables
     ==================
@@ -30,6 +37,8 @@ The following documentation explains how to use the Template Library service.
 
 Contact
 #######
+
+You can contact the xOpera team by sending an email to xopera@xlab.si.
 
 The list of contributors:
 

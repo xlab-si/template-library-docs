@@ -35,6 +35,12 @@ the command below (The simplest way to test the package is to install it into a 
     $ python3 -m venv .venv && . .venv/bin/activate
     $ pip install xopera-template-library
 
+The development version of the package is available on `Test PyPI`_ and the installation goes as follows.
+
+.. code-block:: console
+
+    (.venv) $ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ xopera-template-library
+
 .. note::
 
     `xopera-template-library`_ is a Python pip package so it is published on Python Package Index (`PyPI`_) where you
