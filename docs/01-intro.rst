@@ -110,8 +110,8 @@ Template Library and xOpera SaaS overview
 *****************************************
 
 The `xOpera`_ ecosystem includes tools that target optimizing deployment processes and reducing the human factor along
-with a faster preparation of deployment scripts. The video presented in this blog points out the most crucial
-functionalities of xOpera SaaS and TPS:
+with a faster preparation of deployment scripts. The video below points out the most crucial functionalities of xOpera
+SaaS and TPS:
 
 - Template Library Publishing Service (TPS) opens up a place for publishing, storing, managing, downloading and
   versioning of OASIS TOSCA modules and blueprints (i.e., TOSCA CSARs).
