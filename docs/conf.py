@@ -19,7 +19,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Template Library'
-copyright = u'2021, xOpera team'
+copyright = u'2022, xOpera team'
 author = u'xOpera team'
 
 # The short X.Y version
@@ -132,7 +132,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'documentation.tex', u'Template Library Documentation',
+    (master_doc, 'template-library-documentation.tex', u'Template Library Documentation',
      u'xOpera team', 'manual'),
 ]
 
@@ -144,7 +144,7 @@ numfig = True
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'documentation', u'Template Library Documentation',
+    (master_doc, 'template-library-documentation', u'Template Library Documentation',
      [author], 1)
 ]
 
@@ -154,8 +154,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'documentation', u'Template Library Documentation',
-     author, 'documentation', 'One line description of project.',
+    (master_doc, 'template-library-documentation', u'Template Library Documentation',
+     author, 'template-library-documentation', 'One line description of project.',
      'Miscellaneous'),
 ]
 
