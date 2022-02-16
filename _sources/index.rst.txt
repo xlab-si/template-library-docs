@@ -12,17 +12,19 @@ The following documentation explains how to use the Template Library service.
 
 .. toctree::
     :caption: Table of Contents
+    :hidden:
 
-    introduction
-    gui
-    api
-    cli
-    plugin
+    01-intro
+    02-gui
+    03-api
+    04-cli
+    05-plugin
 
 .. toctree::
     :caption: More info
+    :hidden:
 
-    contact
+    06-contact
     GitHub <https://github.com/xlab-si/template-library-docs>
 
 ..

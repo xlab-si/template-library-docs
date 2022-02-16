@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Get in touch" href="contact.html" />
-    <link rel="prev" title="Template Library CLI" href="cli.html" /> 
+    <link rel="next" title="Get in touch" href="06-contact.html" />
+    <link rel="prev" title="Template Library CLI" href="04-cli.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,10 +44,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">Template Library GUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">Template Library REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Template Library CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-gui.html">Template Library GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-api.html">Template Library REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-cli.html">Template Library CLI</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Template Library plugin for VS Code/Eclipse Che</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#manual-installation-and-publishing">Manual installation and publishing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#vs-code-installation">VS Code installation</a></li>
@@ -75,7 +75,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">More info</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">Get in touch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-contact.html">Get in touch</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/xlab-si/template-library-docs">GitHub</a></li>
 </ul>
 
@@ -95,7 +95,7 @@
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>Template Library plugin for VS Code/Eclipse Che</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/plugin.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/05-plugin.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -265,12 +265,12 @@ The JSON keys specified are not mutually exclusive so you can execute multiple T
 </tbody>
 </table>
 <p>Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;uploadTemplateName&quot;</span><span class="p">:</span> <span class="s2">&quot;awsBucket&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;uploadTemplateDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS bucket node&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;uploadTemplateTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;uploadPublicAccess&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadTemplateName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;awsBucket&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadTemplateDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AWS bucket node&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadTemplateTypeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadPublicAccess&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="figure align-center" id="id22">
@@ -304,11 +304,11 @@ The JSON keys specified are not mutually exclusive so you can execute multiple T
 </tbody>
 </table>
 <p>Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;uploadVersionName&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1.5&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;uploadReadmeFile&quot;</span><span class="p">:</span> <span class="s2">&quot;./aws_bucket/README.md&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;uploadTemplateFile&quot;</span><span class="p">:</span> <span class="s2">&quot;./aws_bucket/AwsBucket.zip&quot;</span><span class="p">,</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadVersionName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadReadmeFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./aws_bucket/README.md&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uploadTemplateFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./aws_bucket/AwsBucket.zip&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="figure align-center" id="id23">
@@ -343,11 +343,11 @@ zip file.</p>
 </tbody>
 </table>
 <p>Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;downloadTemplateName&quot;</span><span class="p">:</span> <span class="s2">&quot;awsBucket&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;downloadVersionName&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1.5&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;downloadPath&quot;</span><span class="p">:</span> <span class="s2">&quot;./AwsBucket.zip&quot;</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;downloadTemplateName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;awsBucket&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;downloadVersionName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;downloadPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./AwsBucket.zip&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="figure align-center" id="id24">
@@ -420,14 +420,14 @@ After that you will have to login again if you activate any TPS commands.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="cli.html" class="btn btn-neutral float-left" title="Template Library CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="contact.html" class="btn btn-neutral float-right" title="Get in touch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="04-cli.html" class="btn btn-neutral float-left" title="Template Library CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="06-contact.html" class="btn btn-neutral float-right" title="Get in touch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, xOpera team.</p>
+    <p>&#169; Copyright 2022, xOpera team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

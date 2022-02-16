@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Template Library CLI" href="cli.html" />
-    <link rel="prev" title="Template Library GUI" href="gui.html" /> 
+    <link rel="next" title="Template Library CLI" href="04-cli.html" />
+    <link rel="prev" title="Template Library GUI" href="02-gui.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,8 +44,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">Template Library GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-gui.html">Template Library GUI</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Template Library REST API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#public-access">Public access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rest-api-design">REST API design</a></li>
@@ -61,12 +61,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Template Library CLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plugin.html">Template Library plugin for VS Code/Eclipse Che</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-cli.html">Template Library CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-plugin.html">Template Library plugin for VS Code/Eclipse Che</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">More info</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">Get in touch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-contact.html">Get in touch</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/xlab-si/template-library-docs">GitHub</a></li>
 </ul>
 
@@ -86,7 +86,7 @@
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>Template Library REST API</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/03-api.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -331,57 +331,57 @@ automation tools (i.e. Ansible playbooks, Chef recipes, Puppet scripts and so on
 orchestrator (such as <code class="docutils literal notranslate"><span class="pre">opera</span></code>).
 In this perspective module could be for instance AWS S3 bucket with very simple TOSCA template that would include just
 the node type for the bucket like in the TOSCA <code class="docutils literal notranslate"><span class="pre">service.yml</span></code> template below.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="nt">tosca_definitions_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca_simple_yaml_1_3</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="nt">tosca_definitions_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tosca_simple_yaml_1_3</span><span class="w"></span>
 
-<span class="nt">node_types</span><span class="p">:</span>
-  <span class="nt">radon.nodes.s3_bucket</span><span class="p">:</span>
-    <span class="nt">derived_from</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.SoftwareComponent</span>
-    <span class="nt">properties</span><span class="p">:</span>
-      <span class="nt">bucket_name</span><span class="p">:</span>
-        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The name of the bucket</span>
-      <span class="nt">aws_region</span><span class="p">:</span>
-        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS region</span>
-    <span class="nt">interfaces</span><span class="p">:</span>
-      <span class="nt">Standard</span><span class="p">:</span>
-        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.interfaces.node.lifecycle.Standard</span>
-        <span class="nt">inputs</span><span class="p">:</span>
-          <span class="nt">bucket_name</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> default</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">SELF</span><span class="p p-Indicator">,</span> <span class="nv">bucket_name</span><span class="p p-Indicator">]</span> <span class="p p-Indicator">},</span><span class="nt"> type</span><span class="p">:</span> <span class="nv">string</span> <span class="p p-Indicator">}</span>
-          <span class="nt">aws_region</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> default</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">SELF</span><span class="p p-Indicator">,</span> <span class="nv">aws_region</span><span class="p p-Indicator">]</span> <span class="p p-Indicator">},</span><span class="nt"> type</span><span class="p">:</span> <span class="nv">string</span> <span class="p p-Indicator">}</span>
-        <span class="nt">operations</span><span class="p">:</span>
-          <span class="nt">create</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">playbooks/create.yml</span>
-          <span class="nt">delete</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">playbooks/delete.yml</span>
-<span class="nn">...</span>
+<span class="nt">node_types</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">radon.nodes.s3_bucket</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">derived_from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tosca.nodes.SoftwareComponent</span><span class="w"></span>
+<span class="w">    </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">bucket_name</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The name of the bucket</span><span class="w"></span>
+<span class="w">      </span><span class="nt">aws_region</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS region</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interfaces</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">Standard</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tosca.interfaces.node.lifecycle.Standard</span><span class="w"></span>
+<span class="w">        </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">bucket_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> default</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">SELF</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">bucket_name</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">},</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">aws_region</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> default</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">SELF</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">aws_region</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">},</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">operations</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbooks/create.yml</span><span class="w"></span>
+<span class="w">          </span><span class="nt">delete</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbooks/delete.yml</span><span class="w"></span>
+<span class="nn">...</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The template also has a link to two implementations in the form of Ansible playbooks which are also part of the module.
 The first one is the <code class="docutils literal notranslate"><span class="pre">create.yml</span></code> used for the create TOSCA operation and is shown below.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
-  <span class="nt">gather_facts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
-  <span class="nt">tasks</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Create</span><span class="nv"> </span><span class="s">AWS</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-      <span class="nt">s3_bucket</span><span class="p">:</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">present</span>
-        <span class="nt">region</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">aws_region</span><span class="nv"> </span><span class="s">}}&quot;</span>
-<span class="nn">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
+<span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Create</span><span class="nv"> </span><span class="s">AWS</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">s3_bucket</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<span class="w">        </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">aws_region</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="nn">...</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The second playbook (<code class="docutils literal notranslate"><span class="pre">delete.yml</span></code>, see below) is for the delete TOSCA operation and could be used for undeployment.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
-  <span class="nt">gather_facts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
-  <span class="nt">tasks</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Remove</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-      <span class="nt">s3_bucket</span><span class="p">:</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="nt">region</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">aws_region</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">absent</span>
-        <span class="nt">force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-<span class="nn">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
+<span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Remove</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">s3_bucket</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">bucket_name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">aws_region</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span><span class="w"></span>
+<span class="w">        </span><span class="nt">force</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w"></span>
+<span class="nn">...</span><span class="w"></span>
 </pre></div>
 </div>
 <p>So, these three files basically depict a module (which is basically a compressed <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/cos01/TOSCA-Simple-Profile-YAML-v1.3-cos01.html#_Toc26969474">TOSCA CSAR</a> or zip archive).
@@ -658,14 +658,14 @@ cookiecurl -X DELETE <span class="s2">&quot;</span><span class="nv">$api</span><
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gui.html" class="btn btn-neutral float-left" title="Template Library GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="cli.html" class="btn btn-neutral float-right" title="Template Library CLI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="02-gui.html" class="btn btn-neutral float-left" title="Template Library GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04-cli.html" class="btn btn-neutral float-right" title="Template Library CLI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, xOpera team.</p>
+    <p>&#169; Copyright 2022, xOpera team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
